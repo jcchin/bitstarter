@@ -107,6 +107,78 @@
 	margin: 0 auto;
       }
 
+      
+      .container-fluid.app_preview {
+        background-color: #F8F8F8  ;
+      }
+      
+      /* CUSTOMIZE THE CAROUSEL
+      -------------------------------------------------- */
+      
+      /* Carousel base class */
+      .carousel {
+        margin-bottom: 60px;
+      }
+      
+      .carousel .container {
+        position: relative;
+        z-index: 9;
+      }
+      
+      .carousel-control {
+        height: 80px;
+        margin-top: 0;
+        font-size: 120px;
+        text-shadow: 0 1px 1px rgba(0,0,0,.4);
+        background-color: transparent;
+        border: 0;
+        z-index: 10;
+      }
+      
+      .carousel .item {
+        height: 500px;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+      }
+      
+      .carousel-caption {
+        background-color: transparent;
+        position: static;
+        max-width: 550px;
+        padding: 0 20px;
+        margin-top: 200px;
+      }
+      
+      .carousel-caption h1,
+      .carousel-caption .lead {
+        margin: 0;
+        line-height: 1.25;
+        color: #fff;
+        text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      }
+      
+      .carousel-caption .btn {
+        margin-top: 10px;
+      }
+      /* MARKETING CONTENT
+      -------------------------------------------------- */
+      
+      /* Center align the text within the three columns below the carousel */
+      .marketing .span4 {
+        text-align: center;
+      }
+      
+      .marketing h2 {
+        font-weight: normal;
+      }
+      
+      .marketing .span4 p {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
     </style>
 <script type="text/javascript">
 
@@ -141,8 +213,9 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
-              <li><a href="./screen-e63a29cf01.html">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <!--li><a href="./screen-e63a29cf01.html">About</a></li-->
+              <li><a href="#" class="scroller" data-section="#faq1" >FAQ</a></li>
+              <li><a href="#" class="scroller" data-section="#preview" >Preview</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -299,7 +372,7 @@
       <!-- For the FAQ, we introduce a little bit of JS, using the accordion. -->
       <!-- This brings in jquery.js and bootstrap.js as dependencies. -->
       <!-- http://twitter.github.io/bootstrap/javascript.html#collapse -->
-      <div class="row-fluid faq">
+      <div class="row-fluid faq" id="faq1">
           <div class="span10 offset1">
             <h3>FAQ</h3>
             <div class="accordion" id="accordion3">
@@ -359,6 +432,179 @@
         </div>
       </div>
     </div>
+    
+    <!-- -->
+    <!--body class="app_preview" id="preview"-->
+    <div class="container-fluid app_preview" id="preview">
+    
+      <div class="row-fluid">
+        <div class="span12">
+        
+        <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+ 
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+ 
+      <!-- Be sure to leave the brand out there if you want it shown -->
+      <a class="brand" href="#">Project name</a>
+ 
+      <!-- Everything you want hidden at 940px or less, place within here -->
+      <div class="nav-collapse collapse">
+      <ul class="nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="#about">Create New Huddle</a></li>
+                    <li><a href="#contact">Change Group</a></li>
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings&nbsp;<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Add Contacts</a></li>
+                      <li><a href="#">Huddle Archive</a></li>
+                      <li><a href="#">Privacy</a></li>
+                      <li class="divider"></li>
+                    
+                      <li><a href="#"><br></a></li>
+                      <li><a href="#">Sign Out</a></li>
+                    </ul>
+                    </li>
+                    </ul>
+        <!-- .nav, .navbar-search, .navbar-form, etc -->
+      </div>
+ 
+    </div>
+  </div>
+</div>
+        
+        
+        
+        <div class="tabbable"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Section 1</a></li>
+    <li><a href="#tab2" data-toggle="tab">Section 2</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <p>I'm in Section 1.</p>
+      
+      <div class="hero-unit">
+            <h1>Heading</h1>
+            <p>Tagline</p>
+            <p>
+                <button class="btn btn-large btn-primary" type="button">Large button</button>
+                <button class="btn btn-large" type="button">Large button</button>
+            </p>
+      </div> <!-- end hero unit -->
+      
+    </div> <!-- end section 1 -->
+    <div class="tab-pane" id="tab2">
+      <p>Howdy, I'm in Section 2.</p>
+        <div class="hero-unit">
+            <h1>Heading2</h1>
+            <p>Tagline2</p>
+            <p>
+                <button class="btn btn-large btn-primary" type="button">Large button2</button>
+                <button class="btn btn-large" type="button">Large button2</button>
+            </p>
+        </div> <!-- end hero unit -->
+    </div> <!-- end section 2 -->
+
+  </div>
+</div>
+        
+
+      
+                
+
+
+        
+        
+        </div>
+      </div> 
+
+        <div class="container"><div id="myCarousel" class="carousel slide" data-pause="remove">
+      <div class="carousel-inner">
+        <div class="item active" style="background-image: url('https://s3.amazonaws.com/jetstrap-site/images/builder/templates/cta_image1.jpg')">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Chipotle</h1>
+              <p class="lead">Suggested by Tina<div>Duration: 1.5 Hours</div><div>Start Time: 6pm</div></p>
+              <a class="btn btn-large btn-primary" href="#">Yay!</a><a class="btn btn-large btn-primary" href="#">Nay!</a>
+            </div>
+          </div>
+        </div>
+        <div class="item" style="background-image: url('https://s3.amazonaws.com/jetstrap-site/images/builder/templates/cta_image2.jpg')">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Hank's House</h1>
+              <p class="lead">Suggested by Hank<div>Duration: 4 hours</div><div>Start Time: 8pm</div></p>
+              <a class="btn btn-large btn-primary" href="#">Yay!<br></a><a class="btn btn-large btn-primary" href="#">Nay!<br></a>
+            </div>
+          </div>
+        </div>
+        <div class="item" style="background-image: url('https://s3.amazonaws.com/jetstrap-site/images/builder/templates/cta_image3.jpg')"><div class="container">
+            <div class="carousel-caption">
+              <h1>Mission Impossible 7</h1>
+              <p class="lead">Suggested by Tom<div>Duration: 2 hours</div><div>Start Time: TBD</div></p>
+              <a class="btn btn-large btn-primary" href="#">Yay!<br></a><a class="btn btn-large btn-primary" href="#">Nay!<br></a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+    </div></div><div class="container marketing"><div class="row">
+        <div class="span4">
+          <div class="container"></div><img class="img-circle" data-src="holder.js/140x140">
+          <h2>Mark Availability</h2>
+          <p><div><br></div></p>
+          <table class="table"><tbody><tr><td>&nbsp; Cell 1&nbsp;</td><td>Cell 2</td><td>Cell 3</td></tr></tbody></table><table class="table"><tbody><tr><td>&nbsp; Cell 1</td><td>Cell 2</td><td>Cell 3</td></tr></tbody></table><p></p>
+        <table class="table"><tbody><tr><td>&nbsp; Cell 1</td><td>Cell 2</td><td>Cell 3</td></tr></tbody></table></div><!-- /.span4 -->
+        <div class="span4">
+          <img class="img-circle" data-src="holder.js/140x140">
+          <h2>Discuss</h2>
+          <p><div>Tina: MMMM Food!</div><div>Bob: Chipotle is expensive..</div><div>Foo: We did this last week</div></p>
+          <p><a class="btn" href="#">Comment<br></a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img class="img-circle" data-src="holder.js/140x140">
+          
+          <h2>Details</h2><p><div>Price: $9</div><div><br></div><div>Location: 1200 California Ave</div></p>
+          <p><a class="btn" href="#">Add/Modify<br></a></p>
+        </div>
+      </div>
+
+      <script>  
+$(function () {
+    $(window).scroll(function(){
+    // global scroll to top button
+        if ($(this).scrollTop() > 300) {
+            $('.scrolltop').fadeIn();
+        } else {
+            $('.scrolltop').fadeOut();
+        }        
+    });
+    
+    // scroll nav
+    $('.scroller').click(function(){
+    	var section = $($(this).data("section"));
+    	var top = section.offset().top-82;
+        $("html, body").animate({ scrollTop: top }, 700);
+        return false;
+    });
+ 
+});
+</script>
+        </div>
+    </body>
+    <!-- -->
+    
+    
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
