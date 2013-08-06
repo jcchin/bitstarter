@@ -34,6 +34,19 @@ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
 git config --global user.name "jcchin"
 git config --global user.email "jchin89@gmail.com"
+
+git checkout staging
+git pull origin master
+
+git checkout staging
+git pull origin staging
+
+git checkout develop
+git pull origin develop
+
+heroku git:remote -a jcchin-bitstarter-s-mooc -r staging-heroku
+heroku git:remote -a jcchin-bitstarter-mooc -r production-heroku
+
 # git pull and install dotfiles as well
 cd $HOME
 if [ -d ./dotfiles/ ]; then
