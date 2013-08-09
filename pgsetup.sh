@@ -1,5 +1,5 @@
-# For local: setup postgres (one-time) and then run the local server
 #!/bin/bash
+# For local: setup postgres (one-time) and then run the local server
 # Set up postgres db for local debugging.
 # 
 # Unlike MySQL, PostgreSQL makes it harder to set blank passwords or set

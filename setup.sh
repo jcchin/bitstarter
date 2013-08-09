@@ -35,6 +35,7 @@ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 git config --global user.name "jcchin"
 git config --global user.email "jchin89@gmail.com"
 
+cd bitstarter/
 git checkout develop
 git pull origin develop
 

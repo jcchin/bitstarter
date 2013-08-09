@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #--------------------------setup--ssjs.sh----------------
 
 # Install node packages
