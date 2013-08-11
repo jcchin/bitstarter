@@ -38,13 +38,11 @@ git config --global user.email "jchin89@gmail.com"
 cd bitstarter/
 git checkout develop
 git pull origin develop
-
 echo -e "\n\nENTER GITHUB CREDENTIALS\n"
 git push -u origin develop
 
 git checkout staging
 git pull origin staging
-
 echo -e "\n\nENTER GITHUB CREDENTIALS (again)\n"
 git push -u origin staging
 

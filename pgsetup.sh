@@ -14,6 +14,11 @@
 # truth, for both setting up postgres and then accessing it later via
 # sequelize. We can also symlink this file into the home directory.
 
+# Set up local Postgres db from .pgpass for use by index.js
+# It parses .pgpass and creates a Postgres database with the given name and user. It also sets up a 
+# symlink to .pgpass in the home directory such that psql can be used, and creates a simple test table 
+# to confirm that everything worked.
+
 # Install postgres
 sudo apt-get install -y postgresql postgresql-contrib
 

@@ -1,29 +1,10 @@
-//var express = require('express');
-//var fs = require('fs');
-
-//var app = express.createServer(express.logger());
-
-//app.get('/', function(request, response) {
-//  var string = String(fs.readFileSync("index.html"));
-//  response.send(string);
-//});
-
-//app.post('/', function(request, response) {
-//  var string = String(fs.readFileSync("about.html"));
-//  response.send(string);
-//});
-
-//var port = process.env.PORT || 8080;
-//app.listen(port, function() {
-//  console.log("Listening on " + port);
-//});
-
-
 // Define routes for simple SSJS web app. 
 // Writes Coinbase orders to database.
-var async   = require('async')
-  , express = require('express')
-  , fs      = require('fs')
+var async   = require('async')  //provides higher order functions for working with asynchronous Javascript
+                                //used here to add each order to the database independently in web.js
+  , express = require('express')//web framework for parsing HTTP requests and generating HTTP responses
+                                //used here to set up the routes for the app
+  , fs      = require('fs')     //file system
   , http    = require('http')
   , https   = require('https')
   , db      = require('./models');
@@ -43,18 +24,21 @@ app.get('/', function(request, response) {
 app.get('/orders', function(request, response) {
   global.db.Order.findAll().success(function(orders) {
     var orders_json = [];
-    orders.forEach(function(order) {
+    orders.forEach(function(order) { 
       orders_json.push({id: order.coinbase_id, amount: order.amount, time: order.time});
     });
     // Uses views/orders.ejs
     response.render("orders", {orders: orders_json});
   }).error(function(err) {
-    console.log(e);
+    console.log(err);
     response.send("error retrieving orders");
   });
 });
 
+
 // Hit this URL while on example.com/orders to refresh
+// It's better to locally cache the new orders in the database via /refresh_orders than
+// to issue a new API call to Coinbase every time the /order page is loaded
 app.get('/refresh_orders', function(request, response) {
   https.get("https://coinbase.com/api/v1/orders?api_key=" + process.env.COINBASE_API_KEY, function(res) {
     var body = '';
@@ -68,6 +52,8 @@ app.get('/refresh_orders', function(request, response) {
         }
         // add each order asynchronously
         async.forEach(orders_json.orders, addOrder, function(err) {
+        //calls addOrder asynchronously on each item in the orders_json.orders array
+        // redirects to "/orders" when all Orders have been added successfully
           if (err) {
             console.log(err);
             response.send("error adding orders");
@@ -130,3 +116,26 @@ var addOrder = function(order_obj, callback) {
     });
   }
 };
+
+
+// -----------Old Non-DB Version ----------
+
+//var express = require('express');
+//var fs = require('fs');
+
+//var app = express.createServer(express.logger());
+
+//app.get('/', function(request, response) {
+//  var string = String(fs.readFileSync("index.html"));
+//  response.send(string);
+//});
+
+//app.post('/', function(request, response) {
+//  var string = String(fs.readFileSync("about.html"));
+//  response.send(string);
+//});
+
+//var port = process.env.PORT || 8080;
+//app.listen(port, function() {
+//  console.log("Listening on " + port);
+//});

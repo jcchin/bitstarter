@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# Set up npm, heroku, and postgres for the app to run
+
 # Install node packages
 npm install
 
